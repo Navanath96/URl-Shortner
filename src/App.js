@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
+import InputShortner from "./InputShortner";
+import LinkResult from "./LinkResult";
+
+
 
 function App() {
+  const [inputValue, setInputvalue]=useState("");
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <InputShortner setInputvalue={setInputvalue}/>
+      <LinkResult inputValue={inputValue}/>
+     </div>
   );
 }
 
